@@ -2,16 +2,28 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import './styles.css';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// Apply styles directly here
+document.body.style.margin = '0';
+document.body.style.padding = '0';
+document.body.style.fontFamily = 'Arial, sans-serif';
+
+const containerStyle = {
+  maxWidth: '1200px',
+  margin: '0 auto',
+  padding: '30px',
+};
+
 root.render(
   <React.StrictMode>
-    <App />
+    <div style={containerStyle}>
+      <App />
+    </div>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
