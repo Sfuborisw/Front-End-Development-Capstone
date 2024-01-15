@@ -1,5 +1,6 @@
 import React from 'react';
 import HeroSection from './HeroSection';
+import Highlights from './Highlights';
 
 const Main = () => {
   return (
@@ -8,6 +9,7 @@ const Main = () => {
         <h2>Welcome to your React project!</h2>
       </section> */}
       <HeroSection/>
+      <Highlights/>
     </main>
   );
 };

@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <div className="container" style={{backgroundColor: '#495e57'}}>
       <div className="row">
-        <div className="col col-6" style={{ flex : 6}}>
+        <div className="col col-6">
           <h1>Lettle Lemon</h1>
           <h3>Chicago</h3>
           <p>
@@ -15,7 +15,7 @@ const HeroSection = () => {
           </p>
           <button onClick={() => alert('Reservation button clicked')}>Reserve a Table</button>
         </div>
-        <div className="col col-6" style={{flex:6, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <div className="col col-6 flex" style={{justifyContent: 'end', alignItems: 'cent' }}>
           {/* <img src={restauranfood} alt="pic"></img> */}
           <img
             src={restauranfood}

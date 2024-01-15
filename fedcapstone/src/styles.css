@@ -2,17 +2,20 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
 .container {
-  max-width: 1200px; /* Adjust as needed */
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 20px; /* Add margin as needed */
+  padding: 20px;
 }
 
-header, nav, main, footer {
-  margin-bottom: 20px; /* Add margin as needed */
+header,
+nav,
+main,
+footer {
+  margin-bottom: 20px;
 }
 
 .row {
@@ -24,10 +27,22 @@ header, nav, main, footer {
   box-sizing: border-box;
 }
 
+.flex {
+  display: flex;
+}
+
 .col-1 {
   flex: 0 0 8.33%; /* 1/12 */
 }
 
 .col-2 {
   flex: 0 0 16.66%; /* 2/12 */
+}
+
+.col-4 {
+  flex: 4;
+}
+
+.col-6 {
+  flex: 6;
 }
