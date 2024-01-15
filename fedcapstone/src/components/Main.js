@@ -1,12 +1,13 @@
 import React from 'react';
+import HeroSection from './HeroSection';
 
 const Main = () => {
   return (
     <main>
-      <section>
+      {/* <section>
         <h2>Welcome to your React project!</h2>
-        {/* Add your main content components here */}
-      </section>
+      </section> */}
+      <HeroSection/>
     </main>
   );
 };

@@ -14,3 +14,20 @@ body {
 header, nav, main, footer {
   margin-bottom: 20px; /* Add margin as needed */
 }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  box-sizing: border-box;
+}
+
+.col-1 {
+  flex: 0 0 8.33%; /* 1/12 */
+}
+
+.col-2 {
+  flex: 0 0 16.66%; /* 2/12 */
+}
