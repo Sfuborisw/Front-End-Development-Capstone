@@ -3,6 +3,7 @@ import HeroSection from './HeroSection';
 import Highlights from './Highlights';
 import Testimonials from './Testimonials';
 import About from './About';
+import BookingPage from './BookingPage';
 
 const Main = () => {
   return (
@@ -12,6 +13,7 @@ const Main = () => {
       </section> */}
       <HeroSection/>
       <Highlights/>
+      <BookingPage/>
       <Testimonials/>
       <About/>
     </main>
