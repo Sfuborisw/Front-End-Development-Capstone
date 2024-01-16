@@ -51,3 +51,34 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
+.colcenter {
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  padding-top: 2rem;
+}
+
+.image1,
+.image2 {
+  position: absolute;
+  width: 60%; /* Set your image width */
+  height: 90%; /* Set your image height */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* .image1 {
+  bottom: 0;
+  left: 0;
+}
+.image2 {
+  top: 0;
+  right: 0;
+} */
+.image2 {
+  /* Adjust the distance between the images as needed */
+  top: calc(50% - 50px);
+  left: calc(50% + 50px);
+}

@@ -1,33 +1,21 @@
 import React from "react";
+import "../styles.css";
+import logo from "../images/footerLogo.jpg";
 
 const Footer = () => {
-  const footerStyle = {
-    // backgroundColor: "#f0f0f0"
-    // padding: "20px",
-  };
-
-  const footerColumnsStyle = {
-    display: "flex",
-    justifyContent: "space-between",
-  };
-
-  const footerColumnStyle = {
-    width: "23%", // Adjust the width as needed
-  };
-
   return (
-    <footer style={footerStyle}>
-      <div style={footerColumnsStyle} className="footer-columns">
-        <div style={footerColumnStyle} className="footer-column">
-          {/* 1st Column: Footer Icon */}
-          <h3>Footer Icon</h3>
-          {/* Add your footer icon or content here */}
+    <footer>
+      <div className="row">
+        <div className="col col-4 center">
+          <img
+            src={logo}
+            alt="Logo"
+            style={{ maxWidth: "100%", maxHeight: "100%" }}
+          />
         </div>
 
-        <div style={footerColumnStyle} className="footer-column">
-          {/* 2nd Column: Footer Navigation */}
+        <div className="col col-4 flex colcenter">
           <h3>Footer Navigation</h3>
-          {/* Add your footer navigation links here */}
           <ul>
             <li>
               <a href="/">HOME</a>
@@ -50,10 +38,8 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div style={footerColumnStyle} className="footer-column">
-          {/* 3rd Column: Contact */}
+        <div className="col col-4 flex colcenter">
           <h3>Contact</h3>
-          {/* Add your contact information or form here */}
           <ul>
             <li>
               <a href="/">Address</a>
@@ -64,10 +50,8 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div style={footerColumnStyle} className="footer-column">
-          {/* 4th Column: Social Media Links */}
+        <div className="col col-4 flex colcenter">
           <h3>Social Media</h3>
-          {/* Add your social media links/icons here */}
           <ul>
             <li>
               <a href="https://facebook.com">Facebook</a>
@@ -75,7 +59,6 @@ const Footer = () => {
             <li>
               <a href="https://twitter.com">Twitter</a>
             </li>
-            {/* Add more social media links as needed */}
           </ul>
         </div>
       </div>
