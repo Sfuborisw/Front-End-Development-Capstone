@@ -13,7 +13,7 @@ document.body.style.padding = '0';
 document.body.style.fontFamily = 'Arial, sans-serif';
 
 const containerStyle = {
-  maxWidth: '1200px',
+  maxWidth: '2200px',
   margin: '0 auto',
   padding: '30px',
 };

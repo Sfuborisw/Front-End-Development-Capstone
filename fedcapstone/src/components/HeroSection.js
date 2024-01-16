@@ -15,7 +15,7 @@ const HeroSection = () => {
           </p>
           <button onClick={() => alert('Reservation button clicked')}>Reserve a Table</button>
         </div>
-        <div className="col col-6 flex" style={{justifyContent: 'end', alignItems: 'cent' }}>
+        <div className="col col-6 flex" style={{justifyContent: 'end', alignItems: 'center' }}>
           {/* <img src={restauranfood} alt="pic"></img> */}
           <img
             src={restauranfood}
