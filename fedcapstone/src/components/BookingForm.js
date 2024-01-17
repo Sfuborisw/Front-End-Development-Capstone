@@ -1,18 +1,29 @@
 import React, { useState } from "react";
 
-const BookingForm = () => {
-  // State variables for form fields
+const BookingForm = ({ availableTimes, dispatch }) => {
   const [date, setDate] = useState("");
-  const [time, setTime] = useState("17:00");
+  const [time, setTime] = useState("");
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("Birthday");
 
-  // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Your logic for handling form submission goes here
     console.log("Form submitted:", { date, time, guests, occasion });
   };
+
+  const handleDateChange = (e) => {
+    const selectedDate = e.target.value;
+    dispatch({
+      type: "UPDATE_TIMES",
+      payload: updateTimes(selectedDate),
+    });
+    setDate(selectedDate);
+  };
+
+  const updateTimes = (selectedDate) => {
+    return ["18:00", "19:00", "20:00", "21:00", "22:00"];
+  };
+
   return (
     <form
       style={{ display: "grid", maxWidth: "200px", gap: "20px" }}
@@ -23,7 +34,7 @@ const BookingForm = () => {
         type="date"
         id="res-date"
         value={date}
-        onChange={(e) => setDate(e.target.value)}
+        onChange={handleDateChange}
       />
 
       <label htmlFor="res-time">Choose time</label>
@@ -32,12 +43,11 @@ const BookingForm = () => {
         value={time}
         onChange={(e) => setTime(e.target.value)}
       >
-        <option>17:00</option>
-        <option>18:00</option>
-        <option>19:00</option>
-        <option>20:00</option>
-        <option>21:00</option>
-        <option>22:00</option>
+        {availableTimes.map((availableTime) => (
+          <option key={availableTime} value={availableTime}>
+            {availableTime}
+          </option>
+        ))}
       </select>
 
       <label htmlFor="guests">Number of guests</label>
