@@ -11,7 +11,7 @@ const availableTimesReducer = (state, action) => {
   }
 };
 
-const BookingPage = () => {
+const Bookings = () => {
   const updateTimes = (selectedDate) => {
     return ["18:00", "19:00", "20:00", "21:00", "22:00", "23:00"];
   };
@@ -29,7 +29,7 @@ const BookingPage = () => {
     <div className="container" style={{ backgroundColor: "#495e57" }}>
       <div className="row flex center">
         <div className="col">
-          <h1>BookingPage</h1>
+          <h1>Bookings</h1>
         </div>
       </div>
       <div className="row flex center">
@@ -41,4 +41,4 @@ const BookingPage = () => {
   );
 };
 
-export default BookingPage;
+export default Bookings;

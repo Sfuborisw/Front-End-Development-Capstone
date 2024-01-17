@@ -3,7 +3,7 @@ import HeroSection from './HeroSection';
 import Highlights from './Highlights';
 import Testimonials from './Testimonials';
 import About from './About';
-import BookingPage from './BookingPage';
+import Bookings from './Bookings';
 
 const Main = () => {
   return (
@@ -13,7 +13,7 @@ const Main = () => {
       </section> */}
       <HeroSection/>
       <Highlights/>
-      <BookingPage/>
+      <Bookings/>
       <Testimonials/>
       <About/>
     </main>
