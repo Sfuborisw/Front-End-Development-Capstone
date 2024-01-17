@@ -1,14 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { submitAPI } from "./api";
 
 const BookingForm = ({ availableTimes, dispatch }) => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("Birthday");
+  const [isFormValid, setIsFormValid] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    // Check if all fields are valid
+    setIsFormValid(date && time && guests >= 1 && guests <= 10 && occasion);
+  }, [date, time, guests, occasion]);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", { date, time, guests, occasion });
+
+    // Additional validation before submitting
+    if (isFormValid) {
+      const submissionResult = await submitAPI({ date, time, guests, occasion });
+
+      if (submissionResult) {
+        navigate("/confirmed-booking");
+      } else {
+        console.error("Form submission failed");
+      }
+    } else {
+      console.error("Form is invalid. Please check all fields.");
+    }
   };
 
   const handleDateChange = (e) => {
@@ -35,6 +56,7 @@ const BookingForm = ({ availableTimes, dispatch }) => {
         id="res-date"
         value={date}
         onChange={handleDateChange}
+        required
       />
 
       <label htmlFor="res-time">Choose time</label>
@@ -42,6 +64,7 @@ const BookingForm = ({ availableTimes, dispatch }) => {
         id="res-time"
         value={time}
         onChange={(e) => setTime(e.target.value)}
+        required
       >
         {availableTimes.map((availableTime) => (
           <option key={availableTime} value={availableTime}>
@@ -59,6 +82,7 @@ const BookingForm = ({ availableTimes, dispatch }) => {
         id="guests"
         value={guests}
         onChange={(e) => setGuests(Number(e.target.value))}
+        required
       />
 
       <label htmlFor="occasion">Occasion</label>
@@ -66,12 +90,13 @@ const BookingForm = ({ availableTimes, dispatch }) => {
         id="occasion"
         value={occasion}
         onChange={(e) => setOccasion(e.target.value)}
+        required
       >
         <option>Birthday</option>
         <option>Anniversary</option>
       </select>
 
-      <input type="submit" value="Make Your reservation" />
+      <input type="submit" value="Make Your reservation" disabled={!isFormValid} />
     </form>
   );
 };
